@@ -8,11 +8,14 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background: url('fundodosite.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
         }
         nav {
             display: flex;
             justify-content: center;
-            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            background: transparent;
             padding: 10px 0;
         }
         nav a {
@@ -27,18 +30,12 @@
         .tab {
             display: none;
             height: 100vh;
-            color: white;
-        }
-        .tab.active {
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        #inicial {
-            background: linear-gradient(45deg, #1e3c72, #2a5298);
-        }
-        #videos {
-            background: linear-gradient(45deg, #1e3c72, #2a5298);
+        .tab.active {
+            display: flex;
         }
         video {
             max-width: 90%;
