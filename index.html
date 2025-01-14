@@ -12,17 +12,27 @@
         nav {
             display: flex;
             justify-content: center;
-            background-color: #001f3f;
+            background: none; /* Remove a cor de fundo */
             padding: 10px 0;
+            position: relative;
         }
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2rem;
+            position: relative;
         }
-        nav a:hover {
-            text-decoration: underline;
+        nav a:hover::after, nav a.active::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -5px;
+            width: 30px; /* Comprimento da barrinha */
+            height: 5px; /* Altura da barrinha */
+            background: white; /* Cor da barrinha */
+            border-radius: 10px;
         }
         .tab {
             display: none;
@@ -51,14 +61,18 @@
             document.querySelectorAll('.tab').forEach(tab => {
                 tab.classList.remove('active');
             });
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
             document.getElementById(tabName).classList.add('active');
+            document.querySelector(`nav a[href="#${tabName}"]`).classList.add('active');
         }
     </script>
 </head>
 <body>
     <nav>
-        <a href="#" onclick="switchTab('inicial')">Inicial</a>
-        <a href="#" onclick="switchTab('videos')">Vídeos</a>
+        <a href="#inicial" class="active" onclick="switchTab('inicial')">Inicial</a>
+        <a href="#videos" onclick="switchTab('videos')">Vídeos</a>
     </nav>
     <div id="inicial" class="tab active"></div>
     <div id="videos" class="tab">
