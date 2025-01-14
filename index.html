@@ -7,30 +7,61 @@
     <style>
         body {
             margin: 0;
-            background: linear-gradient(to bottom, #001f3f, #0074D9);
-            color: white;
             font-family: Arial, sans-serif;
         }
-        .content {
+        nav {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            background-color: #001f3f;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .tab {
+            display: none;
+            height: 100vh;
+            color: white;
+        }
+        .tab.active {
+            display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
         }
-        h1 {
-            font-size: 3rem;
+        #inicial {
+            background: url('fundodosite.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        #videos {
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
         }
         video {
-            margin-top: 20px;
             max-width: 90%;
             border: 2px solid white;
         }
     </style>
+    <script>
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabName).classList.add('active');
+        }
+    </script>
 </head>
 <body>
-    <div class="content">
-        <h1>Bem-vindo ao meu site!</h1>
+    <nav>
+        <a href="#" onclick="switchTab('inicial')">Inicial</a>
+        <a href="#" onclick="switchTab('videos')">Vídeos</a>
+    </nav>
+    <div id="inicial" class="tab active"></div>
+    <div id="videos" class="tab">
         <video controls>
             <source src="video.mp4" type="video/mp4">
             Seu navegador não suporta a reprodução de vídeos.
