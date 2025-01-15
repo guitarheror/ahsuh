@@ -55,6 +55,26 @@
             background: url('fundodosite.jpg') no-repeat center center fixed;
             background-size: cover;
         }
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
         video {
             max-width: 90%;
             border: 2px solid white;
@@ -76,9 +96,18 @@
         <a href="#" onclick="switchTab('videos')">Vídeos</a>
     </nav>
     <div id="inicial" class="tab active">
-        <h1>Bem-vindo ao Meu Site</h1>
+        <h1></h1>
     </div>
     <div id="videos" class="tab">
+        <div class="sidebar">
+            <a href="#">(Re)comece aqui</a>
+            <a href="#">Crisma 2.0</a>
+            <a href="#">Missa</a>
+            <a href="#">Como rezar</a>
+            <a href="#">Maria</a>
+            <a href="#">Livros</a>
+            <a href="#">Bíblia</a>
+        </div>
         <video controls>
             <source src="video1.mp4" type="video/mp4">
             Seu navegador não suporta a reprodução de vídeos.
