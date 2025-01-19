@@ -9,6 +9,9 @@
         body {
             margin: 0;
             font-family: 'Playfair Display', serif;
+            background: url('fundodosite.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #4169E1; /* Azul Royale */
         }
         nav {
             display: flex;
@@ -40,20 +43,9 @@
         nav a:hover::after {
             width: 100%;
         }
-        .tab {
-            display: none;
-            height: 100vh;
-            color: #4169E1; /* Azul Royale */
+        .content {
             padding-top: 60px;
             box-sizing: border-box;
-        }
-        .tab.active {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background: url('fundodosite.jpg') no-repeat center center fixed;
-            background-size: cover;
         }
         .sidebar {
             display: flex;
@@ -76,24 +68,12 @@
             text-decoration: underline;
         }
     </style>
-    <script>
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.getElementById(tabName).classList.add('active');
-        }
-    </script>
 </head>
 <body>
     <nav>
-        <a href="#" onclick="switchTab('inicial')">Inicial</a>
-        <a href="#" onclick="switchTab('videos')">Vídeos</a>
+        <a href="#">Grupo Recomeçar</a>
     </nav>
-    <div id="inicial" class="tab active">
-        <h1></h1>
-    </div>
-    <div id="videos" class="tab">
+    <div class="content">
         <div class="sidebar">
             <a href="#">(Re)comece aqui</a>
             <a href="#">Crisma 2.0</a>
