@@ -13,38 +13,21 @@
             background-size: cover;
             color: #4169E1; /* Azul Royale */
         }
-        nav {
+        header {
             display: flex;
             justify-content: center;
+            align-items: center;
             background: none;
-            padding: 10px 0;
+            padding: 20px 0;
             position: fixed;
             width: 100%;
             z-index: 1000;
         }
-        nav a {
-            color: #4169E1; /* Azul Royale */
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.5rem;
-            position: relative;
-        }
-        nav a::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #4169E1;
-            transition: width 0.3s;
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-        }
-        nav a:hover::after {
-            width: 100%;
+        header img {
+            max-height: 80px;
         }
         .content {
-            padding-top: 60px;
+            padding-top: 100px;
             box-sizing: border-box;
         }
         .sidebar {
@@ -70,9 +53,9 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#">Grupo Recomeçar</a>
-    </nav>
+    <header>
+        <img src="LOGO (2)" alt="Logo Grupo Recomeçar">
+    </header>
     <div class="content">
         <div class="sidebar">
             <a href="#">(Re)comece aqui</a>
