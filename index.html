@@ -54,20 +54,83 @@
             transform: scale(1.05);
             transition: transform 0.3s;
         }
+        .section {
+            display: none;
+            padding: 20px;
+        }
+        .section.active {
+            display: block;
+        }
+        .video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
     </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 </head>
 <body>
     <header>
         <img src="LOGO (2).jpg" alt="Logo Grupo Recomeçar">
     </header>
     <div class="content">
-        <a href="recomeceaqui.html" class="card" style="background-image: url('recomeceaqui.jpg');">(Re)comece aqui</a>
-        <a href="crisma20.html" class="card" style="background-image: url('crisma20.jpg');">Crisma 2.0</a>
-        <a href="missa.html" class="card" style="background-image: url('missa.jpg');">Missa</a>
-        <a href="comorezar.html" class="card" style="background-image: url('comorezar.jpg');">Como rezar</a>
-        <a href="maria.html" class="card" style="background-image: url('maria.jpg');">Maria</a>
-        <a href="livros.html" class="card" style="background-image: url('livros.jpg');">Livros</a>
-        <a href="biblia.html" class="card" style="background-image: url('biblia.jpg');">Bíblia</a>
+        <div class="card" style="background-image: url('recomeceaqui.jpeg');" onclick="showSection('recomeceaqui')">(Re)comece aqui</div>
+        <div class="card" style="background-image: url('crisma20.jpg');" onclick="showSection('crisma20')">Crisma 2.0</div>
+        <div class="card" style="background-image: url('missa.jpg');" onclick="showSection('missa')">Missa</div>
+        <div class="card" style="background-image: url('comorezar.jpg');" onclick="showSection('comorezar')">Como rezar</div>
+        <div class="card" style="background-image: url('maria.jpeg');" onclick="showSection('maria')">Maria</div>
+        <div class="card" style="background-image: url('livros.jpg');" onclick="showSection('livros')">Livros</div>
+        <div class="card" style="background-image: url('biblia.jpg');" onclick="showSection('biblia')">Bíblia</div>
+    </div>
+
+    <div id="recomeceaqui" class="section">
+        <video class="video" controls>
+            <source src="recomeceaqui.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div id="crisma20" class="section">
+        <video class="video" controls>
+            <source src="crisma20.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div id="missa" class="section">
+        <video class="video" controls>
+            <source src="missa.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div id="comorezar" class="section">
+        <video class="video" controls>
+            <source src="comorezar.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div id="maria" class="section">
+        <video class="video" controls>
+            <source src="maria.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div id="livros" class="section">
+        <video class="video" controls>
+            <source src="livros.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div id="biblia" class="section">
+        <video class="video" controls>
+            <source src="biblia.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 </body>
 </html>
