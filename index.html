@@ -27,7 +27,7 @@
             max-height: 150px;
         }
         .content {
-            padding-top: 250px;
+            padding-top: 300px; /* Ajustado para mover os cards mais para baixo */
             box-sizing: border-box;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -38,7 +38,7 @@
             position: relative;
             background-size: cover;
             background-position: center;
-            height: 600px; /* Aumentado ainda mais para formato vertical */
+            height: 500px; /* Reduzido para 500px */
             display: flex;
             align-items: flex-end;
             justify-content: center;
@@ -49,6 +49,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             text-decoration: none;
+            cursor: pointer; /* Adicionado para reforçar a clicabilidade */
         }
         .card:hover {
             transform: scale(1.05);
