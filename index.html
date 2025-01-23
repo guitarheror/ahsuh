@@ -24,31 +24,35 @@
             z-index: 1000;
         }
         header img {
-            max-height: 200px; /* Aumenta o tamanho da imagem */
+            max-height: 150px;
         }
         .content {
-            padding-top: 150px;
+            padding-top: 200px;
             box-sizing: border-box;
-        }
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            background: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
             padding: 20px;
-            box-sizing: border-box;
         }
-        .sidebar a {
-            color: #4169E1; /* Azul Royale */
+        .card {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            font-size: 1.5rem;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
             text-decoration: none;
-            margin: 10px 0;
-            font-size: 1.2rem;
         }
-        .sidebar a:hover {
-            text-decoration: underline;
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
         }
     </style>
 </head>
@@ -57,15 +61,13 @@
         <img src="LOGO (2).jpg" alt="Logo Grupo Recomeçar">
     </header>
     <div class="content">
-        <div class="sidebar">
-            <a href="#">(Re)comece aqui</a>
-            <a href="#">Crisma 2.0</a>
-            <a href="#">Missa</a>
-            <a href="#">Como rezar</a>
-            <a href="#">Maria</a>
-            <a href="#">Livros</a>
-            <a href="#">Bíblia</a>
-        </div>
+        <a href="#" class="card" style="background-image: url('recomeceaqui.jpg');">(Re)comece aqui</a>
+        <a href="#" class="card" style="background-image: url('crisma20.jpg');">Crisma 2.0</a>
+        <a href="#" class="card" style="background-image: url('missa.jpg');">Missa</a>
+        <a href="#" class="card" style="background-image: url('comorezar.jpg');">Como rezar</a>
+        <a href="#" class="card" style="background-image: url('maria.jpg');">Maria</a>
+        <a href="#" class="card" style="background-image: url('livros.jpg');">Livros</a>
+        <a href="#" class="card" style="background-image: url('biblia.jpg');">Bíblia</a>
     </div>
 </body>
 </html>
