@@ -90,13 +90,13 @@
     </style>
     <script>
         function showSection(sectionId) {
-            // Oculta todos os cards
+            // Esconde os cards
             document.getElementById('card-container').style.display = 'none';
 
             // Oculta todas as seções
             document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
 
-            // Mostra a seção correspondente
+            // Exibe a seção correspondente
             document.getElementById(sectionId).classList.add('active');
 
             // Atualiza a URL sem recarregar a página
@@ -110,8 +110,8 @@
             // Oculta todas as seções
             document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
 
-            // Volta para a página inicial
-            history.pushState(null, '', 'index.html');
+            // Atualiza a URL de volta para a página inicial
+            history.pushState(null, '', window.location.pathname);
         }
 
         // Permite voltar entre as "páginas" sem recarregar
@@ -126,8 +126,10 @@
         // Ao carregar a página, verifica se há um hash na URL e exibe a seção correspondente
         window.onload = function() {
             const sectionId = window.location.hash ? window.location.hash.substring(1) : null;
-            if (sectionId) {
+            if (sectionId && document.getElementById(sectionId)) {
                 showSection(sectionId);
+            } else {
+                goBack(); // Garante que os cards apareçam caso não haja hash na URL
             }
         };
     </script>
