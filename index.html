@@ -12,21 +12,8 @@
             background: white;
             color: #4169E1;
         }
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: none;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-        header img {
-            max-height: 150px;
-        }
         #card-container {
-            padding-top: 150px;
+            padding-top: 50px; /* Ajustei o espaçamento para não ficar muito alto */
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
@@ -90,31 +77,18 @@
     </style>
     <script>
         function showSection(sectionId) {
-            // Esconde os cards
             document.getElementById('card-container').style.display = 'none';
-
-            // Oculta todas as seções
             document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-
-            // Exibe a seção correspondente
             document.getElementById(sectionId).classList.add('active');
-
-            // Atualiza a URL sem recarregar a página
             history.pushState({ section: sectionId }, '', '#' + sectionId);
         }
 
         function goBack() {
-            // Mostra os cards novamente
             document.getElementById('card-container').style.display = 'grid';
-
-            // Oculta todas as seções
             document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-
-            // Atualiza a URL de volta para a página inicial
             history.pushState(null, '', window.location.pathname);
         }
 
-        // Permite voltar entre as "páginas" sem recarregar
         window.onpopstate = function(event) {
             if (event.state && event.state.section) {
                 showSection(event.state.section);
@@ -123,21 +97,17 @@
             }
         };
 
-        // Ao carregar a página, verifica se há um hash na URL e exibe a seção correspondente
         window.onload = function() {
             const sectionId = window.location.hash ? window.location.hash.substring(1) : null;
             if (sectionId && document.getElementById(sectionId)) {
                 showSection(sectionId);
             } else {
-                goBack(); // Garante que os cards apareçam caso não haja hash na URL
+                goBack();
             }
         };
     </script>
 </head>
 <body>
-    <header>
-        <img src="LOGO (2).png" alt="Logo Grupo Recomeçar">
-    </header>
 
     <!-- Container de Cards -->
     <div id="card-container">
@@ -200,5 +170,6 @@
             <source src="biblia.mp4" type="video/mp4">
         </video>
     </div>
+
 </body>
 </html>
