@@ -1,186 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grupo Recomeçar</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-<style>
-body {
-margin: 0;
-font-family: 'Playfair Display', serif;
-background: white;
-color: #4169E1;
-}
-header {
-display: flex;
-justify-content: center;
-align-items: center;
-background: none;
-padding: 20px 0;
-position: fixed;
-width: 100%;
-z-index: 1000;
-}
-header img {
-max-height: 150px;
-}
-.content {
-padding-top: 150px;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 20px;
-padding: 20px;
-text-align: center;
-}
-.card {
-background-size: cover;
-background-position: center;
-width: 300px;
-height: 500px;
-display: flex;
-align-items: flex-end;
-justify-content: center;
-color: white;
-text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-font-size: 1.5rem;
-padding: 10px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-border-radius: 10px;
-text-decoration: none;
-cursor: pointer;
-}
-.card:hover {
-transform: scale(1.05);
-transition: transform 0.3s;
-}
-.section {
-display: none;
-padding: 20px;
-text-align: center;
-}
-.section.active {
-display: block;
-}
-.video {
-max-width: 100%;
-height: auto;
-display: block;
-margin: 0 auto;
-}
-.text {
-text-align: center;
-margin-bottom: 20px;
-font-size: 1.2rem;
-}
-.back-button {
-display: block;
-margin: 20px auto;
-padding: 10px 20px;
-font-size: 1rem;
-background: #4169E1;
-color: white;
-border: none;
-cursor: pointer;
-border-radius: 5px;
-}
-.back-button:hover {
-background: #3653b3;
-}
-</style>
-<script>
-function showSection(sectionId) {
-// Oculta todas as seções
-document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-
-// Mostra a seção correspondente
-        document.getElementById(sectionId).classList.add('active');
-
-        // Atualiza a URL sem recarregar a página
-        history.pushState({ section: sectionId }, '', '#' + sectionId);
-    }
-
-    // Permite voltar entre as "páginas"
-    window.onpopstate = function(event) {
-        if (event.state && event.state.section) {
-            showSection(event.state.section);
-        } else {
-            showSection('home');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Recomeçar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            background: white;
+            color: #4169E1;
         }
-    };
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        header img {
+            max-height: 150px;
+        }
+        #card-container {
+            padding-top: 150px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .card {
+            background-size: cover;
+            background-position: center;
+            width: 300px;
+            height: 500px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            font-size: 1.5rem;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+        .section {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+        .section.active {
+            display: block;
+        }
+        .video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .text {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: #4169E1;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background: #3653b3;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            // Oculta todos os cards
+            document.getElementById('card-container').style.display = 'none';
 
-    // Ao carregar a página, verifica se há um hash na URL e exibe a seção correspondente
-    window.onload = function() {
-        const sectionId = window.location.hash ? window.location.hash.substring(1) : 'home';
-        showSection(sectionId);
-    };
-</script>
+            // Oculta todas as seções
+            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
 
+            // Mostra a seção correspondente
+            document.getElementById(sectionId).classList.add('active');
+
+            // Atualiza a URL sem recarregar a página
+            history.pushState({ section: sectionId }, '', '#' + sectionId);
+        }
+
+        function goBack() {
+            // Mostra os cards novamente
+            document.getElementById('card-container').style.display = 'grid';
+
+            // Oculta todas as seções
+            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+
+            // Volta para a página inicial
+            history.pushState(null, '', 'index.html');
+        }
+
+        // Permite voltar entre as "páginas" sem recarregar
+        window.onpopstate = function(event) {
+            if (event.state && event.state.section) {
+                showSection(event.state.section);
+            } else {
+                goBack();
+            }
+        };
+
+        // Ao carregar a página, verifica se há um hash na URL e exibe a seção correspondente
+        window.onload = function() {
+            const sectionId = window.location.hash ? window.location.hash.substring(1) : null;
+            if (sectionId) {
+                showSection(sectionId);
+            }
+        };
+    </script>
 </head>
 <body>
-<header>
-<img src="LOGO (2).png" alt="Logo Grupo Recomeçar">
-</header>
+    <header>
+        <img src="LOGO (2).png" alt="Logo Grupo Recomeçar">
+    </header>
 
+    <!-- Container de Cards -->
+    <div id="card-container">
+        <div class="card" style="background-image: url('recomeceaqui.jpeg');" onclick="showSection('recomeceaqui')">(Re)comece aqui</div>
+        <div class="card" style="background-image: url('crisma20.jpg');" onclick="showSection('crisma20')">Crisma 2.0</div>
+        <div class="card" style="background-image: url('missa.jpg');" onclick="showSection('missa')">Missa</div>
+        <div class="card" style="background-image: url('comorezar.jpg');" onclick="showSection('comorezar')">Como rezar</div>
+        <div class="card" style="background-image: url('maria.jpeg');" onclick="showSection('maria')">Maria</div>
+        <div class="card" style="background-image: url('livros.jpg');" onclick="showSection('livros')">Livros</div>
+        <div class="card" style="background-image: url('biblia.jpg');" onclick="showSection('biblia')">Bíblia</div>
+    </div>
+
+    <!-- Seções de Conteúdo -->
+    <div id="recomeceaqui" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <div class="text">Bem-vindo ao curso (Re)comece aqui!</div>
+        <video class="video" controls>
+            <source src="recomeceaqui.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="crisma20" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <video class="video" controls>
+            <source src="crisma20.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="missa" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <video class="video" controls>
+            <source src="missa.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="comorezar" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <video class="video" controls>
+            <source src="comorezar.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="maria" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <video class="video" controls>
+            <source src="maria.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="livros" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <video class="video" controls>
+            <source src="livros.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="biblia" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <video class="video" controls>
+            <source src="biblia.mp4" type="video/mp4">
+        </video>
+    </div>
 </body>
 </html>
-
-<div id="home" class="content">
-<div class="card" style="background-image: url('recomeceaqui.jpeg');" onclick="showSection('recomeceaqui')">(Re)comece aqui</div>
-<div class="card" style="background-image: url('crisma20.jpg');" onclick="showSection('crisma20')">Crisma 2.0</div>
-<div class="card" style="background-image: url('missa.jpg');" onclick="showSection('missa')">Missa</div>
-<div class="card" style="background-image: url('comorezar.jpg');" onclick="showSection('comorezar')">Como rezar</div>
-<div class="card" style="background-image: url('maria.jpeg');" onclick="showSection('maria')">Maria</div>
-<div class="card" style="background-image: url('livros.jpg');" onclick="showSection('livros')">Livros</div>
-<div class="card" style="background-image: url('biblia.jpg');" onclick="showSection('biblia')">Bíblia</div>
-</div>
-
-<div id="recomeceaqui" class="section">
-<button class="back-button" onclick="showSection('home')">Voltar</button>
-<div class="text">Bem-vindo ao curso (Re)comece aqui!</div>
-<video class="video" controls>
-<source src="recomeceaqui.mp4" type="video/mp4">
-</video>
-</div>
-
-<div id="crisma20" class="section">
-<button class="back-button" onclick="showSection('home')">Voltar</button>
-<video class="video" controls>
-<source src="crisma20.mp4" type="video/mp4">
-</video>
-</div>
-
-<div id="missa" class="section">
-<button class="back-button" onclick="showSection('home')">Voltar</button>
-<video class="video" controls>
-<source src="missa.mp4" type="video/mp4">
-</video>
-</div>
-
-<div id="comorezar" class="section">
-<button class="back-button" onclick="showSection('home')">Voltar</button>
-<video class="video" controls>
-<source src="comorezar.mp4" type="video/mp4">
-</video>
-</div>
-
-<div id="maria" class="section">
-<button class="back-button" onclick="showSection('home')">Voltar</button>
-<video class="video" controls>
-<source src="maria.mp4" type="video/mp4">
-</video>
-</div>
-
-<div id="livros" class="section">
-<button class="back-button" onclick="showSection('home')">Voltar</button>
-<video class="video" controls>
-<source src="livros.mp4" type="video/mp4">
-</video>
-</div>
-
-<div id="biblia" class="section">
-<button class="back-button" onclick="showSection('home')">Voltar</button>
-<video class="video" controls>
-<source src="biblia.mp4" type="video/mp4">
-</video>
-</div>
