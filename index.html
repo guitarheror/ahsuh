@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo Recomeçar</title>
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: 'IM Fell English', serif;
+            font-family: 'Playfair Display', serif;
             background: white;
             color: #4169E1;
         }
@@ -75,8 +75,41 @@
             background: #3653b3;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('card-container').style.display = 'none';
+            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            history.pushState({ section: sectionId }, '', '#' + sectionId);
+        }
+
+        function goBack() {
+            document.getElementById('card-container').style.display = 'grid';
+            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+            history.pushState(null, '', window.location.pathname);
+        }
+
+        window.onpopstate = function(event) {
+            if (event.state && event.state.section) {
+                showSection(event.state.section);
+            } else {
+                goBack();
+            }
+        };
+
+        window.onload = function() {
+            const sectionId = window.location.hash ? window.location.hash.substring(1) : null;
+            if (sectionId && document.getElementById(sectionId)) {
+                showSection(sectionId);
+            } else {
+                goBack();
+            }
+        };
+    </script>
 </head>
 <body>
+
+    <!-- Container de Cards -->
     <div id="card-container">
         <div class="card" style="background-image: url('recomeceaqui.jpeg');" onclick="showSection('recomeceaqui')">(Re)comece aqui</div>
         <div class="card" style="background-image: url('crisma20.jpg');" onclick="showSection('crisma20')">Crisma 2.0</div>
@@ -86,5 +119,57 @@
         <div class="card" style="background-image: url('livros.jpg');" onclick="showSection('livros')">Livros</div>
         <div class="card" style="background-image: url('biblia.jpg');" onclick="showSection('biblia')">Bíblia</div>
     </div>
+
+    <!-- Seções de Conteúdo -->
+    <div id="recomeceaqui" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <div class="text">Bem-vindo ao curso (Re)comece aqui!</div>
+        <video class="video" controls>
+            <source src="recomeceaqui.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="crisma20" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <video class="video" controls>
+            <source src="crisma20.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="missa" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <video class="video" controls>
+            <source src="missa.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="comorezar" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <video class="video" controls>
+            <source src="comorezar.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="maria" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <video class="video" controls>
+            <source src="maria.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="livros" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <video class="video" controls>
+            <source src="livros.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="biblia" class="section">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+        <video class="video" controls>
+            <source src="biblia.mp4" type="video/mp4">
+        </video>
+    </div>
+
 </body>
 </html>
