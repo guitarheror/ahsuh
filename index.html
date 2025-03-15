@@ -74,6 +74,36 @@
         .back-button:hover {
             background: #3653b3;
         }
+        .episode-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .episode {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .episode img {
+            width: 100px;
+            height: 60px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+        .episode-title {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .episode-description {
+            font-size: 0.9rem;
+            color: #555;
+        }
     </style>
     <script>
         function showSection(sectionId) {
@@ -88,86 +118,37 @@
             document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
             history.pushState(null, '', window.location.pathname);
         }
-
-        window.onpopstate = function(event) {
-            if (event.state && event.state.section) {
-                showSection(event.state.section);
-            } else {
-                goBack();
-            }
-        };
-
-        window.onload = function() {
-            const sectionId = window.location.hash ? window.location.hash.substring(1) : null;
-            if (sectionId && document.getElementById(sectionId)) {
-                showSection(sectionId);
-            } else {
-                goBack();
-            }
-        };
     </script>
 </head>
 <body>
 
     <div id="card-container">
         <div class="card" style="background-image: url('recomeceaqui.jpeg');" onclick="showSection('recomeceaqui')">(Re)comece aqui</div>
-        <div class="card" style="background-image: url('crisma20.jpg');" onclick="showSection('crisma20')">Crisma 2.0</div>
-        <div class="card" style="background-image: url('missa.jpg');" onclick="showSection('missa')">Missa</div>
-        <div class="card" style="background-image: url('comorezar.jpg');" onclick="showSection('comorezar')">Como rezar</div>
-        <div class="card" style="background-image: url('maria.jpeg');" onclick="showSection('maria')">Maria</div>
-        <div class="card" style="background-image: url('livros.jpg');" onclick="showSection('livros')">Livros</div>
-        <div class="card" style="background-image: url('biblia.jpg');" onclick="showSection('biblia')">Bíblia</div>
     </div>
 
     <div id="recomeceaqui" class="section">
         <button class="back-button" onclick="goBack()">Voltar</button>
         <div class="text">Bem-vindo ao curso (Re)comece aqui!</div>
         <video class="video" controls>
-            <source src="recomeceaqui.mp4" type="video/mp4">
+            <source src="recomeceaqui1.mp4" type="video/mp4">
         </video>
+        
+        <div class="episode-container">
+            <div class="episode" onclick="document.querySelector('.video source').src='recomeceaqui2.mp4'; document.querySelector('.video').load();">
+                <img src="thumb2.jpg" alt="Thumb 2">
+                <div>
+                    <div class="episode-title">02. Nome do Episódio</div>
+                    <div class="episode-description">Descrição do episódio 2.</div>
+                </div>
+            </div>
+            <div class="episode" onclick="document.querySelector('.video source').src='recomeceaqui3.mp4'; document.querySelector('.video').load();">
+                <img src="thumb3.jpg" alt="Thumb 3">
+                <div>
+                    <div class="episode-title">03. Nome do Episódio</div>
+                    <div class="episode-description">Descrição do episódio 3.</div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div id="crisma20" class="section">
-        <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
-            <source src="crisma20.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <div id="missa" class="section">
-        <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
-            <source src="missa.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <div id="comorezar" class="section">
-        <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
-            <source src="comorezar.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <div id="maria" class="section">
-        <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
-            <source src="maria.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <div id="livros" class="section">
-        <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
-            <source src="livros.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <div id="biblia" class="section">
-        <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
-            <source src="biblia.mp4" type="video/mp4">
-        </video>
-    </div>
-
 </body>
 </html>
