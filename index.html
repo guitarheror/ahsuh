@@ -13,7 +13,7 @@
             color: #4169E1;
         }
         #card-container {
-            padding-top: 50px; /* Ajustei o espaçamento para não ficar muito alto */
+            padding-top: 50px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
@@ -75,7 +75,7 @@
             background: #3653b3;
         }
 
-        /* Novos estilos para a seção (Re)comece aqui */
+        /* Estilos para as seções de vídeos e episódios */
         .container {
             width: 80%;
             margin: auto;
@@ -148,7 +148,7 @@
             }
         };
 
-        // Função para trocar o vídeo na seção (Re)comece aqui
+        // Função para trocar o vídeo em todas as seções
         function changeVideo(src, title, description) {
             document.getElementById('main-video').src = src;
             document.getElementById('video-title').innerText = title;
@@ -169,87 +169,277 @@
         <div class="card" style="background-image: url('biblia.jpg');" onclick="showSection('biblia')">Bíblia</div>
     </div>
 
-    <!-- Seções de Conteúdo -->
+    <!-- Seção (Re)comece aqui -->
     <div id="recomeceaqui" class="section">
         <button class="back-button" onclick="goBack()">Voltar</button>
         <div class="container">
             <div class="video-player">
-                <h2 id="video-title">Episódio 1: Introdução</h2>
+                <h2 id="video-title">Episódio 1: (Re)comece aqui</h2>
                 <video id="main-video" class="video" controls>
                     <source src="recomeceaqui1.mp4" type="video/mp4">
                     Seu navegador não suporta vídeos.
                 </video>
-                <p id="video-description">Descrição do episódio 1: Introdução ao curso (Re)comece Aqui.</p>
+                <p id="video-description">Vem aí na seção (Re)comece aqui...</p>
             </div>
-            
             <div class="episode-list">
                 <h3>Todos os Episódios</h3>
-                <div class="episode" onclick="changeVideo('recomeceaqui1.mp4', 'Episódio 1: Introdução', 'Descrição do episódio 1: Introdução ao curso.')">
+                <div class="episode" onclick="changeVideo('recomeceaqui1.mp4', 'Episódio 1: (Re)comece aqui', 'Vem aí na seção (Re)comece aqui...')">
                     <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
                     <div class="episode-info">
-                        <h4>Episódio 1: Introdução</h4>
-                        <p>Descrição do episódio 1: Introdução ao curso.</p>
+                        <h4>Episódio 1: (Re)comece aqui</h4>
+                        <p>Vem aí na seção (Re)comece aqui...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('recomeceaqui2.mp4', 'Episódio 2: O Caminho', 'Descrição do episódio 2: Explorando o caminho da fé.')">
+                <div class="episode" onclick="changeVideo('recomeceaqui2.mp4', 'Episódio 2: (Re)comece aqui', 'Vem aí na seção (Re)comece aqui...')">
                     <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
                     <div class="episode-info">
-                        <h4>Episódio 2: O Caminho</h4>
-                        <p>Descrição do episódio 2: Explorando o caminho da fé.</p>
+                        <h4>Episódio 2: (Re)comece aqui</h4>
+                        <p>Vem aí na seção (Re)comece aqui...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('recomeceaqui3.mp4', 'Episódio 3: A Missão', 'Descrição do episódio 3: Entendendo a missão de vida.')">
+                <div class="episode" onclick="changeVideo('recomeceaqui3.mp4', 'Episódio 3: (Re)comece aqui', 'Vem aí na seção (Re)comece aqui...')">
                     <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
                     <div class="episode-info">
-                        <h4>Episódio 3: A Missão</h4>
-                        <p>Descrição do episódio 3: Entendendo a missão de vida.</p>
+                        <h4>Episódio 3: (Re)comece aqui</h4>
+                        <p>Vem aí na seção (Re)comece aqui...</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Outras seções (mantidas originais) -->
+    <!-- Seção Crisma 2.0 -->
     <div id="crisma20" class="section">
         <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
-            <source src="crisma20.mp4" type="video/mp4">
-        </video>
+        <div class="container">
+            <div class="video-player">
+                <h2 id="video-title">Episódio 1: Crisma 2.0</h2>
+                <video id="main-video" class="video" controls>
+                    <source src="crisma201.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <p id="video-description">Vem aí na seção Crisma 2.0...</p>
+            </div>
+            <div class="episode-list">
+                <h3>Todos os Episódios</h3>
+                <div class="episode" onclick="changeVideo('crisma201.mp4', 'Episódio 1: Crisma 2.0', 'Vem aí na seção Crisma 2.0...')">
+                    <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
+                    <div class="episode-info">
+                        <h4>Episódio 1: Crisma 2.0</h4>
+                        <p>Vem aí na seção Crisma 2.0...</p>
+                    </div>
+                </div>
+                <div class="episode" onclick="changeVideo('crisma202.mp4', 'Episódio 2: Crisma 2.0', 'Vem aí na seção Crisma 2.0...')">
+                    <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
+                    <div class="episode-info">
+                        <h4>Episódio 2: Crisma 2.0</h4>
+                        <p>Vem aí na seção Crisma 2.0...</p>
+                    </div>
+                </div>
+                <div class="episode" onclick="changeVideo('crisma203.mp4', 'Episódio 3: Crisma 2.0', 'Vem aí na seção Crisma 2.0...')">
+                    <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
+                    <div class="episode-info">
+                        <h4>Episódio 3: Crisma 2.0</h4>
+                        <p>Vem aí na seção Crisma 2.0...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Seção Missa -->
     <div id="missa" class="section">
         <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
-            <source src="missa.mp4" type="video/mp4">
-        </video>
+        <div class="container">
+            <div class="video-player">
+                <h2 id="video-title">Episódio 1: Missa</h2>
+                <video id="main-video" class="video" controls>
+                    <source src="missa1.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <p id="video-description">Vem aí na seção Missa...</p>
+            </div>
+            <div class="episode-list">
+                <h3>Todos os Episódios</h3>
+                <div class="episode" onclick="changeVideo('missa1.mp4', 'Episódio 1: Missa', 'Vem aí na seção Missa...')">
+                    <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
+                    <div class="episode-info">
+                        <h4>Episódio 1: Missa</h4>
+                        <p>Vem aí na seção Missa...</p>
+                    </div>
+                </div>
+                <div class="episode" onclick="changeVideo('missa2.mp4', 'Episódio 2: Missa', 'Vem aí na seção Missa...')">
+                    <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
+                    <div class="episode-info">
+                        <h4>Episódio 2: Missa</h4>
+                        <p>Vem aí na seção Missa...</p>
+                    </div>
+                </div>
+                <div class="episode" onclick="changeVideo('missa3.mp4', 'Episódio 3: Missa', 'Vem aí na seção Missa...')">
+                    <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
+                    <div class="episode-info">
+                        <h4>Episódio 3: Missa</h4>
+                        <p>Vem aí na seção Missa...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Seção Como rezar -->
     <div id="comorezar" class="section">
         <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
-            <source src="comorezar.mp4" type="video/mp4">
-        </video>
+        <div class="container">
+            <div class="video-player">
+                <h2 id="video-title">Episódio 1: Como rezar</h2>
+                <video id="main-video" class="video" controls>
+                    <source src="comorezar1.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <p id="video-description">Vem aí na seção Como rezar...</p>
+            </div>
+            <div class="episode-list">
+                <h3>Todos os Episódios</h3>
+                <div class="episode" onclick="changeVideo('comorezar1.mp4', 'Episódio 1: Como rezar', 'Vem aí na seção Como rezar...')">
+                    <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
+                    <div class="episode-info">
+                        <h4>Episódio 1: Como rezar</h4>
+                        <p>Vem aí na seção Como rezar...</p>
+                    </div>
+                </div>
+                <div class="episode" onclick="changeVideo('comorezar2.mp4', 'Episódio 2: Como rezar', 'Vem aí na seção Como rezar...')">
+                    <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
+                    <div class="episode-info">
+                        <h4>Episódio 2: Como rezar</h4>
+                        <p>Vem aí na seção Como rezar...</p>
+                    </div>
+                </div>
+                <div class="episode" onclick="changeVideo('comorezar3.mp4', 'Episódio 3: Como rezar', 'Vem aí na seção Como rezar...')">
+                    <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
+                    <div class="episode-info">
+                        <h4>Episódio 3: Como rezar</h4>
+                        <p>Vem aí na seção Como rezar...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Seção Maria -->
     <div id="maria" class="section">
         <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
-            <source src="maria.mp4" type="video/mp4">
-        </video>
+        <div class="container">
+            <div class="video-player">
+                <h2 id="video-title">Episódio 1: Maria</h2>
+                <video id="main-video" class="video" controls>
+                    <source src="maria1.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <p id="video-description">Vem aí na seção Maria...</p>
+            </div>
+            <div class="episode-list">
+                <h3>Todos os Episódios</h3>
+                <div class="episode" onclick="changeVideo('maria1.mp4', 'Episódio 1: Maria', 'Vem aí na seção Maria...')">
+                    <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
+                    <div class="episode-info">
+                        <h4>Episódio 1: Maria</h4>
+                        <p>Vem aí na seção Maria...</p>
+                    </div>
+                </div>
+                <div class="episode" onclick="changeVideo('maria2.mp4', 'Episódio 2: Maria', 'Vem aí na seção Maria...')">
+                    <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
+                    <div class="episode-info">
+                        <h4>Episódio 2: Maria</h4>
+                        <p>Vem aí na seção Maria...</p>
+                    </div>
+                </div>
+                <div class="episode" onclick="changeVideo('maria3.mp4', 'Episódio 3: Maria', 'Vem aí na seção Maria...')">
+                    <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
+                    <div class="episode-info">
+                        <h4>Episódio 3: Maria</h4>
+                        <p>Vem aí na seção Maria...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Seção Livros -->
     <div id="livros" class="section">
         <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
-            <source src="livros.mp4" type="video/mp4">
-        </video>
+        <div class="container">
+            <div class="video-player">
+                <h2 id="video-title">Episódio 1: Livros</h2>
+                <video id="main-video" class="video" controls>
+                    <source src="livros1.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <p id="video-description">Vem aí na seção Livros...</p>
+            </div>
+            <div class="episode-list">
+                <h3>Todos os Episódios</h3>
+                <div class="episode" onclick="changeVideo('livros1.mp4', 'Episódio 1: Livros', 'Vem aí na seção Livros...')">
+                    <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
+                    <div class="episode-info">
+                        <h4>Episódio 1: Livros</h4>
+                        <p>Vem aí na seção Livros...</p>
+                    </div>
+                </div>
+                <div class="episode" onclick="changeVideo('livros2.mp4', 'Episódio 2: Livros', 'Vem aí na seção Livros...')">
+                    <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
+                    <div class="episode-info">
+                        <h4>Episódio 2: Livros</h4>
+                        <p>Vem aí na seção Livros...</p>
+                    </div>
+                </div>
+                <div class="episode" onclick="changeVideo('livros3.mp4', 'Episódio 3: Livros', 'Vem aí na seção Livros...')">
+                    <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
+                    <div class="episode-info">
+                        <h4>Episódio 3: Livros</h4>
+                        <p>Vem aí na seção Livros...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Seção Bíblia -->
     <div id="biblia" class="section">
         <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
-            <source src="biblia.mp4" type="video/mp4">
-        </video>
+        <div class="container">
+            <div class="video-player">
+                <h2 id="video-title">Episódio 1: Bíblia</h2>
+                <video id="main-video" class="video" controls>
+                    <source src="biblia1.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <p id="video-description">Vem aí na seção Bíblia...</p>
+            </div>
+            <div class="episode-list">
+                <h3>Todos os Episódios</h3>
+                <div class="episode" onclick="changeVideo('biblia1.mp4', 'Episódio 1: Bíblia', 'Vem aí na seção Bíblia...')">
+                    <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
+                    <div class="episode-info">
+                        <h4>Episódio 1: Bíblia</h4>
+                        <p>Vem aí na seção Bíblia...</p>
+                    </div>
+                </div>
+                <div class="episode" onclick="changeVideo('biblia2.mp4', 'Episódio 2: Bíblia', 'Vem aí na seção Bíblia...')">
+                    <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
+                    <div class="episode-info">
+                        <h4>Episódio 2: Bíblia</h4>
+                        <p>Vem aí na seção Bíblia...</p>
+                    </div>
+                </div>
+                <div class="episode" onclick="changeVideo('biblia3.mp4', 'Episódio 3: Bíblia', 'Vem aí na seção Bíblia...')">
+                    <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
+                    <div class="episode-info">
+                        <h4>Episódio 3: Bíblia</h4>
+                        <p>Vem aí na seção Bíblia...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>
