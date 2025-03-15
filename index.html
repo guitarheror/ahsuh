@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sugestão 2: Melhorar a meta tag viewport para dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Grupo Recomeçar</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -36,6 +37,8 @@
             border-radius: 10px;
             text-decoration: none;
             cursor: pointer;
+            /* Sugestão 4: Adicionar transição suave ao card */
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .card:hover {
             transform: scale(1.05);
@@ -122,51 +125,53 @@
 
     <!-- Seções de Conteúdo -->
     <div id="recomeceaqui" class="section">
-        <button class="back-button" onclick="goBack()">Voltar</button>
+        <!-- Sugestão 9: Adicionar uma seta ao botão "Voltar" -->
+        <button class="back-button" onclick="goBack()">← Voltar</button>
         <div class="text">Bem-vindo ao curso (Re)comece aqui!</div>
-        <video class="video" controls>
+        <!-- Sugestão 3: Adicionar preload="metadata" ao vídeo -->
+        <video class="video" controls preload="metadata">
             <source src="recomeceaqui.mp4" type="video/mp4">
         </video>
     </div>
 
     <div id="crisma20" class="section">
-        <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
+        <button class="back-button" onclick="goBack()">← Voltar</button>
+        <video class="video" controls preload="metadata">
             <source src="crisma20.mp4" type="video/mp4">
         </video>
     </div>
 
     <div id="missa" class="section">
-        <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
+        <button class="back-button" onclick="goBack()">← Voltar</button>
+        <video class="video" controls preload="metadata">
             <source src="missa.mp4" type="video/mp4">
         </video>
     </div>
 
     <div id="comorezar" class="section">
-        <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
+        <button class="back-button" onclick="goBack()">← Voltar</button>
+        <video class="video" controls preload="metadata">
             <source src="comorezar.mp4" type="video/mp4">
         </video>
     </div>
 
     <div id="maria" class="section">
-        <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
+        <button class="back-button" onclick="goBack()">← Voltar</button>
+        <video class="video" controls preload="metadata">
             <source src="maria.mp4" type="video/mp4">
         </video>
     </div>
 
     <div id="livros" class="section">
-        <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
+        <button class="back-button" onclick="goBack()">← Voltar</button>
+        <video class="video" controls preload="metadata">
             <source src="livros.mp4" type="video/mp4">
         </video>
     </div>
 
     <div id="biblia" class="section">
-        <button class="back-button" onclick="goBack()">Voltar</button>
-        <video class="video" controls>
+        <button class="back-button" onclick="goBack()">← Voltar</button>
+        <video class="video" controls preload="metadata">
             <source src="biblia.mp4" type="video/mp4">
         </video>
     </div>
