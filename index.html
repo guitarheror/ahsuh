@@ -149,11 +149,12 @@
             }
         };
 
-        // Função para trocar o vídeo em todas as seções
-        function changeVideo(src, title, description) {
-            document.getElementById('main-video').src = src;
-            document.getElementById('video-title').innerText = title;
-            document.getElementById('video-description').innerText = description;
+        // Função para trocar o vídeo na seção específica
+        function changeVideo(sectionId, src, title, description) {
+            const section = document.getElementById(sectionId);
+            section.querySelector('.video-player video').src = src;
+            section.querySelector('#video-title').innerText = title;
+            section.querySelector('#video-description').innerText = description;
         }
     </script>
 </head>
@@ -184,21 +185,21 @@
             </div>
             <div class="episode-list">
                 <h3>Todos os Episódios</h3>
-                <div class="episode" onclick="changeVideo('recomeceaqui1.mp4', 'Episódio 1: (Re)comece aqui', 'Vem aí na seção (Re)comece aqui...')">
+                <div class="episode" onclick="changeVideo('recomeceaqui', 'recomeceaqui1.mp4', 'Episódio 1: (Re)comece aqui', 'Vem aí na seção (Re)comece aqui...')">
                     <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
                     <div class="episode-info">
                         <h4>Episódio 1: (Re)comece aqui</h4>
                         <p>Vem aí na seção (Re)comece aqui...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('recomeceaqui2.mp4', 'Episódio 2: (Re)comece aqui', 'Vem aí na seção (Re)comece aqui...')">
+                <div class="episode" onclick="changeVideo('recomeceaqui', 'recomeceaqui2.mp4', 'Episódio 2: (Re)comece aqui', 'Vem aí na seção (Re)comece aqui...')">
                     <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
                     <div class="episode-info">
                         <h4>Episódio 2: (Re)comece aqui</h4>
                         <p>Vem aí na seção (Re)comece aqui...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('recomeceaqui3.mp4', 'Episódio 3: (Re)comece aqui', 'Vem aí na seção (Re)comece aqui...')">
+                <div class="episode" onclick="changeVideo('recomeceaqui', 'recomeceaqui3.mp4', 'Episódio 3: (Re)comece aqui', 'Vem aí na seção (Re)comece aqui...')">
                     <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
                     <div class="episode-info">
                         <h4>Episódio 3: (Re)comece aqui</h4>
@@ -223,21 +224,21 @@
             </div>
             <div class="episode-list">
                 <h3>Todos os Episódios</h3>
-                <div class="episode" onclick="changeVideo('crisma201.mp4', 'Episódio 1: Crisma 2.0', 'Vem aí na seção Crisma 2.0...')">
+                <div class="episode" onclick="changeVideo('crisma20', 'crisma201.mp4', 'Episódio 1: Crisma 2.0', 'Vem aí na seção Crisma 2.0...')">
                     <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
                     <div class="episode-info">
                         <h4>Episódio 1: Crisma 2.0</h4>
                         <p>Vem aí na seção Crisma 2.0...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('crisma202.mp4', 'Episódio 2: Crisma 2.0', 'Vem aí na seção Crisma 2.0...')">
+                <div class="episode" onclick="changeVideo('crisma20', 'crisma202.mp4', 'Episódio 2: Crisma 2.0', 'Vem aí na seção Crisma 2.0...')">
                     <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
                     <div class="episode-info">
                         <h4>Episódio 2: Crisma 2.0</h4>
                         <p>Vem aí na seção Crisma 2.0...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('crisma203.mp4', 'Episódio 3: Crisma 2.0', 'Vem aí na seção Crisma 2.0...')">
+                <div class="episode" onclick="changeVideo('crisma20', 'crisma203.mp4', 'Episódio 3: Crisma 2.0', 'Vem aí na seção Crisma 2.0...')">
                     <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
                     <div class="episode-info">
                         <h4>Episódio 3: Crisma 2.0</h4>
@@ -262,21 +263,21 @@
             </div>
             <div class="episode-list">
                 <h3>Todos os Episódios</h3>
-                <div class="episode" onclick="changeVideo('missa1.mp4', 'Episódio 1: Missa', 'Vem aí na seção Missa...')">
+                <div class="episode" onclick="changeVideo('missa', 'missa1.mp4', 'Episódio 1: Missa', 'Vem aí na seção Missa...')">
                     <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
                     <div class="episode-info">
                         <h4>Episódio 1: Missa</h4>
                         <p>Vem aí na seção Missa...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('missa2.mp4', 'Episódio 2: Missa', 'Vem aí na seção Missa...')">
+                <div class="episode" onclick="changeVideo('missa', 'missa2.mp4', 'Episódio 2: Missa', 'Vem aí na seção Missa...')">
                     <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
                     <div class="episode-info">
                         <h4>Episódio 2: Missa</h4>
                         <p>Vem aí na seção Missa...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('missa3.mp4', 'Episódio 3: Missa', 'Vem aí na seção Missa...')">
+                <div class="episode" onclick="changeVideo('missa', 'missa3.mp4', 'Episódio 3: Missa', 'Vem aí na seção Missa...')">
                     <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
                     <div class="episode-info">
                         <h4>Episódio 3: Missa</h4>
@@ -301,21 +302,21 @@
             </div>
             <div class="episode-list">
                 <h3>Todos os Episódios</h3>
-                <div class="episode" onclick="changeVideo('comorezar1.mp4', 'Episódio 1: Como rezar', 'Vem aí na seção Como rezar...')">
+                <div class="episode" onclick="changeVideo('comorezar', 'comorezar1.mp4', 'Episódio 1: Como rezar', 'Vem aí na seção Como rezar...')">
                     <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
                     <div class="episode-info">
                         <h4>Episódio 1: Como rezar</h4>
                         <p>Vem aí na seção Como rezar...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('comorezar2.mp4', 'Episódio 2: Como rezar', 'Vem aí na seção Como rezar...')">
+                <div class="episode" onclick="changeVideo('comorezar', 'comorezar2.mp4', 'Episódio 2: Como rezar', 'Vem aí na seção Como rezar...')">
                     <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
                     <div class="episode-info">
                         <h4>Episódio 2: Como rezar</h4>
                         <p>Vem aí na seção Como rezar...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('comorezar3.mp4', 'Episódio 3: Como rezar', 'Vem aí na seção Como rezar...')">
+                <div class="episode" onclick="changeVideo('comorezar', 'comorezar3.mp4', 'Episódio 3: Como rezar', 'Vem aí na seção Como rezar...')">
                     <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
                     <div class="episode-info">
                         <h4>Episódio 3: Como rezar</h4>
@@ -340,21 +341,21 @@
             </div>
             <div class="episode-list">
                 <h3>Todos os Episódios</h3>
-                <div class="episode" onclick="changeVideo('maria1.mp4', 'Episódio 1: Maria', 'Vem aí na seção Maria...')">
+                <div class="episode" onclick="changeVideo('maria', 'maria1.mp4', 'Episódio 1: Maria', 'Vem aí na seção Maria...')">
                     <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
                     <div class="episode-info">
                         <h4>Episódio 1: Maria</h4>
                         <p>Vem aí na seção Maria...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('maria2.mp4', 'Episódio 2: Maria', 'Vem aí na seção Maria...')">
+                <div class="episode" onclick="changeVideo('maria', 'maria2.mp4', 'Episódio 2: Maria', 'Vem aí na seção Maria...')">
                     <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
                     <div class="episode-info">
                         <h4>Episódio 2: Maria</h4>
                         <p>Vem aí na seção Maria...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('maria3.mp4', 'Episódio 3: Maria', 'Vem aí na seção Maria...')">
+                <div class="episode" onclick="changeVideo('maria', 'maria3.mp4', 'Episódio 3: Maria', 'Vem aí na seção Maria...')">
                     <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
                     <div class="episode-info">
                         <h4>Episódio 3: Maria</h4>
@@ -379,21 +380,21 @@
             </div>
             <div class="episode-list">
                 <h3>Todos os Episódios</h3>
-                <div class="episode" onclick="changeVideo('livros1.mp4', 'Episódio 1: Livros', 'Vem aí na seção Livros...')">
+                <div class="episode" onclick="changeVideo('livros', 'livros1.mp4', 'Episódio 1: Livros', 'Vem aí na seção Livros...')">
                     <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
                     <div class="episode-info">
                         <h4>Episódio 1: Livros</h4>
                         <p>Vem aí na seção Livros...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('livros2.mp4', 'Episódio 2: Livros', 'Vem aí na seção Livros...')">
+                <div class="episode" onclick="changeVideo('livros', 'livros2.mp4', 'Episódio 2: Livros', 'Vem aí na seção Livros...')">
                     <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
                     <div class="episode-info">
                         <h4>Episódio 2: Livros</h4>
                         <p>Vem aí na seção Livros...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('livros3.mp4', 'Episódio 3: Livros', 'Vem aí na seção Livros...')">
+                <div class="episode" onclick="changeVideo('livros', 'livros3.mp4', 'Episódio 3: Livros', 'Vem aí na seção Livros...')">
                     <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
                     <div class="episode-info">
                         <h4>Episódio 3: Livros</h4>
@@ -418,21 +419,21 @@
             </div>
             <div class="episode-list">
                 <h3>Todos os Episódios</h3>
-                <div class="episode" onclick="changeVideo('biblia1.mp4', 'Episódio 1: Bíblia', 'Vem aí na seção Bíblia...')">
+                <div class="episode" onclick="changeVideo('biblia', 'biblia1.mp4', 'Episódio 1: Bíblia', 'Vem aí na seção Bíblia...')">
                     <img src="thumb1.jpg" alt="Thumbnail Episódio 1">
                     <div class="episode-info">
                         <h4>Episódio 1: Bíblia</h4>
                         <p>Vem aí na seção Bíblia...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('biblia2.mp4', 'Episódio 2: Bíblia', 'Vem aí na seção Bíblia...')">
+                <div class="episode" onclick="changeVideo('biblia', 'biblia2.mp4', 'Episódio 2: Bíblia', 'Vem aí na seção Bíblia...')">
                     <img src="thumb2.jpg" alt="Thumbnail Episódio 2">
                     <div class="episode-info">
                         <h4>Episódio 2: Bíblia</h4>
                         <p>Vem aí na seção Bíblia...</p>
                     </div>
                 </div>
-                <div class="episode" onclick="changeVideo('biblia3.mp4', 'Episódio 3: Bíblia', 'Vem aí na seção Bíblia...')">
+                <div class="episode" onclick="changeVideo('biblia', 'biblia3.mp4', 'Episódio 3: Bíblia', 'Vem aí na seção Bíblia...')">
                     <img src="thumb3.jpg" alt="Thumbnail Episódio 3">
                     <div class="episode-info">
                         <h4>Episódio 3: Bíblia</h4>
